@@ -52,35 +52,22 @@ async function callGroqChat(prompt) {
     throw new Error("Daily Groq limit reached.");
   }
 
-  const body = {
-    model: GROQ_MODEL,
-    messages: [
-      { role: "system", content: "You are a helpful assistant." },
-      { role: "user", content: prompt }
-    ],
-    max_tokens: GROQ_MAX_TOKENS,
-    stream: false
-  };
-
-  const res = await fetch("https://api.groq.com/openai/v1/chat/completions", {
+  const res = await fetch("https://superdev2775.pythonanywhere.com/api/groq/chat", {
     method: "POST",
-    headers: {
-      "Authorization": `Bearer ${GROQ_API_KEY}`,
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify(body)
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ prompt })
   });
 
   if (!res.ok) {
     const errText = await res.text();
-    throw new Error(`Groq error: ${res.status} ${errText}`);
+    throw new Error(`Backend error: ${res.status} ${errText}`);
   }
 
   incrementUsage();
   updateUsageUI();
 
   const json = await res.json();
-  return json.choices[0].message.content;
+  return json.answer;
 }
 
 // -------- OTHER APIS (examples) --------
