@@ -71,7 +71,7 @@ async function callGroqChat(prompt) {
 
 // -------- OTHER APIS (examples) --------
 async function getJoke() {
-  const res = await fetch("https://v2.jokeapi.dev/joke/Any?safe-mode");
+  const res = await fetch("https://v2.jokeapi.dev/joke/Any");
   const data = await res.json();
   if (data.type === "single") return data.joke;
   return `${data.setup}\n${data.delivery}`;
