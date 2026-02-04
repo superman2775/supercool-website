@@ -1,5 +1,4 @@
 // -------- CONFIG --------
-const GROQ_API_KEY = "YOUR_GROQ_API_KEY_HERE"; // for local dev only
 const GROQ_MODEL = "llama-3.3-70b-versatile";  // pick from Groq docs[web:90]
 const GROQ_MAX_TOKENS = 512;
 const GROQ_DAILY_LIMIT = 20;
