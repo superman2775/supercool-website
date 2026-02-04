@@ -1,7 +1,7 @@
 // -------- CONFIG --------
 const GROQ_MODEL = "llama-3.3-70b-versatile";  // pick from Groq docs[web:90]
 const GROQ_MAX_TOKENS = 512;
-const GROQ_DAILY_LIMIT = 20;
+const GROQ_DAILY_LIMIT = 10;
 
 // -------- DAILY LIMIT LOGIC --------
 function getTodayKey() {
