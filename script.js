@@ -82,6 +82,24 @@ async function getCatUrl() {
   const data = await res.json();
   return data[0].url;
 }
+async function getDogUrl() {
+  const res = await fetch("https://dog.ceo/api/breeds/image/random");
+  const data = await res.json();
+  return data.message; // image URL[web:169]
+}
+
+async function getFoxUrl() {
+  const res = await fetch("https://randomfox.ca/floof/");
+  const data = await res.json();
+  return data.image; // image URL[web:169]
+}
+
+async function getDuckUrl() {
+  const res = await fetch("https://random-d.uk/api/v2/random");
+  const data = await res.json();
+  return data.url; // image URL[web:172]
+}
+
 
 // -------- HOOK UP UI --------
 document.addEventListener("DOMContentLoaded", () => {
