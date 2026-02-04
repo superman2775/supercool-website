@@ -1,62 +1,90 @@
-<body>
-  <main>
-    <h1>API Playground</h1>
-    <p class="subtitle">Groq AI + a bunch of fun public APIs, all in one page.</p>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>API Playground</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <div class="grid">
-      <section id="groq-section" class="card">
-        <span class="badge">Groq</span>
-        <h2>Groq AI Chat</h2>
-        <small>Ask something. Limited uses per day.</small>
-        <textarea id="groq-input" rows="4" placeholder="Ask something..."></textarea>
-        <button id="groq-btn">Ask Groq</button>
-        <div id="groq-usage"></div>
-        <pre id="groq-output"></pre>
-      </section>
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main>
+      <h1>API Playground</h1>
+      <p class="subtitle">
+        Groq AI + fun public APIs (jokes & animals) on one **simple** page.
+      </p>
 
-      <div class="grid-column">
-        <section id="joke-section" class="card">
-          <span class="badge">Fun</span>
-          <h2>Random Joke</h2>
-          <small>Powered by JokeAPI.</small>
-          <button id="joke-btn">Get a joke</button>
-          <pre id="joke-output"></pre>
+      <div class="grid">
+        <!-- Groq card -->
+        <section id="groq-section" class="card">
+          <span class="badge">Groq</span>
+          <h2>Groq AI Chat</h2>
+          <small>Ask something. Limited uses per day.</small>
+
+          <textarea
+            id="groq-input"
+            rows="4"
+            placeholder="Ask Groq something..."
+          ></textarea>
+          <button id="groq-btn">Ask Groq</button>
+          <div id="groq-usage"></div>
+          <pre id="groq-output"></pre>
         </section>
 
-        <section id="cat-section" class="card">
-          <span class="badge">Images</span>
-          <h2>Random Cat</h2>
-          <small>From The Cat API.</small>
-          <button id="cat-btn">Get a cat</button>
-          <div id="cat-output"></div>
-        </section>
-        <section id="dog-section" class="card">
-  <span class="badge">Images</span>
-  <h2>Random Dog</h2>
-  <small>From Dog CEO API.</small>
-  <button id="dog-btn">Get a dog</button>
-  <div id="dog-output"></div>
-</section>
+        <!-- Right column: jokes + animals -->
+        <div class="grid-column">
+          <!-- Joke card -->
+          <section id="joke-section" class="card">
+            <span class="badge">Fun</span>
+            <h2>Random Joke</h2>
+            <small>Powered by JokeAPI.</small>
 
-<section id="fox-section" class="card">
-  <span class="badge">Images</span>
-  <h2>Random Fox</h2>
-  <small>From RandomFox API.</small>
-  <button id="fox-btn">Get a fox</button>
-  <div id="fox-output"></div>
-</section>
+            <button id="joke-btn">Get a joke</button>
+            <pre id="joke-output"></pre>
+          </section>
 
-<section id="duck-section" class="card">
-  <span class="badge">Images</span>
-  <h2>Random Duck</h2>
-  <small>From RandomDuck API.</small>
-  <button id="duck-btn">Get a duck</button>
-  <div id="duck-output"></div>
-</section>
+          <!-- Animals wrapper -->
+          <section class="card">
+            <span class="badge">Images</span>
+            <h2>Random Animals</h2>
+            <small>Cats, dogs, foxes and ducks.</small>
 
+            <div id="animals-grid" style="display: grid; gap: 10px;">
+              <!-- Cat -->
+              <div id="cat-section">
+                <h3 style="margin: 0 0 6px; font-size: 0.95rem;">Cat</h3>
+                <button id="cat-btn">Get a cat</button>
+                <div id="cat-output" style="margin-top: 8px;"></div>
+              </div>
+
+              <!-- Dog -->
+              <div id="dog-section">
+                <h3 style="margin: 12px 0 6px; font-size: 0.95rem;">Dog</h3>
+                <button id="dog-btn">Get a dog</button>
+                <div id="dog-output" style="margin-top: 8px;"></div>
+              </div>
+
+              <!-- Fox -->
+              <div id="fox-section">
+                <h3 style="margin: 12px 0 6px; font-size: 0.95rem;">Fox</h3>
+                <button id="fox-btn">Get a fox</button>
+                <div id="fox-output" style="margin-top: 8px;"></div>
+              </div>
+
+              <!-- Duck -->
+              <div id="duck-section">
+                <h3 style="margin: 12px 0 6px; font-size: 0.95rem;">Duck</h3>
+                <button id="duck-btn">Get a duck</button>
+                <div id="duck-output" style="margin-top: 8px;"></div>
+              </div>
+            </div>
+          </section>
+        </div>
       </div>
-    </div>
-  </main>
+    </main>
 
-  <script src="script.js"></script>
-</body>
+    <!-- Scripts -->
+    <script src="script.js"></script>
+  </body>
+</html>
