@@ -1,34 +1,38 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>API Playground</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
 <body>
-  <h1>API Playground</h1>
+  <main>
+    <h1>API Playground</h1>
+    <p class="subtitle">Groq AI + a bunch of fun public APIs, all in one page.</p>
 
-  <section id="groq-section">
-    <h2>Groq AI Chat</h2>
-    <p>Ask a question. Limited to a few requests per day.</p>
-    <textarea id="groq-input" rows="4" placeholder="Ask something..."></textarea>
-    <button id="groq-btn">Ask Groq</button>
-    <div id="groq-usage"></div>
-    <pre id="groq-output"></pre>
-  </section>
+    <div class="grid">
+      <section id="groq-section" class="card">
+        <span class="badge">Groq</span>
+        <h2>Groq AI Chat</h2>
+        <small>Ask something. Limited uses per day.</small>
+        <textarea id="groq-input" rows="4" placeholder="Ask something..."></textarea>
+        <button id="groq-btn">Ask Groq</button>
+        <div id="groq-usage"></div>
+        <pre id="groq-output"></pre>
+      </section>
 
-  <section id="joke-section">
-    <h2>Random Joke (JokeAPI)</h2>
-    <button id="joke-btn">Get a joke</button>
-    <pre id="joke-output"></pre>
-  </section>
+      <div class="grid-column">
+        <section id="joke-section" class="card">
+          <span class="badge">Fun</span>
+          <h2>Random Joke</h2>
+          <small>Powered by JokeAPI.</small>
+          <button id="joke-btn">Get a joke</button>
+          <pre id="joke-output"></pre>
+        </section>
 
-  <section id="cat-section">
-    <h2>Random Cat (The Cat API)</h2>
-    <button id="cat-btn">Get a cat</button>
-    <div id="cat-output"></div>
-  </section>
+        <section id="cat-section" class="card">
+          <span class="badge">Images</span>
+          <h2>Random Cat</h2>
+          <small>From The Cat API.</small>
+          <button id="cat-btn">Get a cat</button>
+          <div id="cat-output"></div>
+        </section>
+      </div>
+    </div>
+  </main>
 
   <script src="script.js"></script>
 </body>
-</html>
