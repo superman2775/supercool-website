@@ -145,5 +145,43 @@ document.addEventListener("DOMContentLoaded", () => {
     } catch (err) {
       catOutput.textContent = err.message;
     }
+      const dogBtn = document.getElementById("dog-btn");
+  const dogOutput = document.getElementById("dog-output");
+
+  dogBtn.addEventListener("click", async () => {
+    dogOutput.innerHTML = "Loading dog...";
+    try {
+      const url = await getDogUrl();
+      dogOutput.innerHTML = `<img src="${url}" alt="Dog" style="max-width: 100%; border-radius: 8px;" />`;
+    } catch (err) {
+      dogOutput.textContent = err.message;
+    }
   });
+
+  const foxBtn = document.getElementById("fox-btn");
+  const foxOutput = document.getElementById("fox-output");
+
+  foxBtn.addEventListener("click", async () => {
+    foxOutput.innerHTML = "Loading fox...";
+    try {
+      const url = await getFoxUrl();
+      foxOutput.innerHTML = `<img src="${url}" alt="Fox" style="max-width: 100%; border-radius: 8px;" />`;
+    } catch (err) {
+      foxOutput.textContent = err.message;
+    }
+  });
+
+  const duckBtn = document.getElementById("duck-btn");
+  const duckOutput = document.getElementById("duck-output");
+
+  duckBtn.addEventListener("click", async () => {
+    duckOutput.innerHTML = "Loading duck...";
+    try {
+      const url = await getDuckUrl();
+      duckOutput.innerHTML = `<img src="${url}" alt="Duck" style="max-width: 100%; border-radius: 8px;" />`;
+    } catch (err) {
+      duckOutput.textContent = err.message;
+    }
+  });
+
 });
